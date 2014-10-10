@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{ifthen,calc} 
+\usepackage{xepersian}
+\newcounter{hours}\newcounter{minutes} 
+\newcommand\printtime{\setcounter{hours}{\time/60}%
+\setcounter{minutes}{\time-\value{hours}*60}%
+\ifthenelse{\value{hours}<10}{0}{}\thehours:{}%
+\ifthenelse{\value{minutes}<10}{0}{}\theminutes} 
+\begin{document}
+\bigskip
+\textbf{زمان آخرین ویرایش:}
+\today،
+ساعت
+\printtime.
+\end{document}

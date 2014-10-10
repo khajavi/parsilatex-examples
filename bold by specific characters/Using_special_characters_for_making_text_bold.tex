@@ -1,0 +1,12 @@
+\documentclass{article}
+\usepackage{xepersian}
+\begingroup\lccode`~=`< \lowercase{\endgroup
+  \protected\def~}{\ifmmode<\else\expandafter\mybf\fi}%}
+\def\mybf#1>{\textbf{#1}}
+\AtBeginDocument{
+  \catcode`<=\active
+}
+
+\begin{document}
+در این جمله، <این> و <آن>، <پررنگ> هستند.
+\end{document}

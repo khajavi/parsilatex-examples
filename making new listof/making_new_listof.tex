@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[titles]{tocloft}
+\usepackage{ptext} 
+\usepackage[colorlinks]{hyperref}
+\usepackage{xepersian} 
+\newcounter{myspeech}
+\renewcommand\themyspeech{\arabic{myspeech}}
+\newlistof{speechs}{spe}{فهرست سخنرانی‌ها}
+\newenvironment{speech}[1]{
+\refstepcounter{speechs}%
+  \addcontentsline{spe}{speechs}{%  
+    \protect\numberline{\thespeechs}%
+    \protect{#1}}
+  \par\bigskip\noindent\refstepcounter{myspeech}\textbf{\themyspeech \ \  سخنرانی #1}
+\begin{quotation}}
+{\end{quotation}}
+\begin{document}
+\tableofcontents
+\listofspeechs
+\section{بخش اول}
+\ptext[1]
+\begin{speech}{وفا خلیقی در دانشگاه رفسنجان}\label{spe1}
+\ptext[5]
+\end{speech}
+\begin{speech}{وحید دامن‌افشان در دانشگاه تبریز}
+\ptext[3]
+\end{speech}
+در  سخنرانی \ref{spe1} دیدیم که ... 
+\end{document}
